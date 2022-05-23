@@ -84,7 +84,7 @@ namespace MyLinkedListSpecFlowProject.StepDefinitions
         }
 
         [When(@"Remove (.*) elements ByIndex (.*) from the Linkedlist")]
-        public void WhenRemoveElementsByIndexFromTheLinkedlist(int index, int elements)
+        public void WhenRemoveElementsByIndexFromTheLinkedlist(int elements, int index)
         {
             LnkdList<int> list = (LnkdList<int>)ScenarioContext.Current["BaseList"];
             list.Remove_N_ElemByIndex(index, elements);
@@ -105,15 +105,6 @@ namespace MyLinkedListSpecFlowProject.StepDefinitions
         [Then(@"Linkedlist must be:")]
         public void ThenLinkedlistMastBe(Table table)
         {
-            //int [] expected = table.Rows[0]["Numbers"]
-            //  .Split(',')
-            //  .Select(str => Convert.ToInt32(str))
-            //  .ToArray();
-
-            //LnkdList<int> actual = (LnkdList<int>)ScenarioContext.Current["BaseList"];
-
-            //Assert.AreEqual(expected, actual);
-
             List<int> expected = table.Rows[0]["Numbers"]
               .Split(',')
               .Select(str => Convert.ToInt32(str))

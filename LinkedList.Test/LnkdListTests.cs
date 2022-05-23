@@ -306,6 +306,7 @@ namespace LinkdList.Test
 
         [TestCase(1, 2, 3, 4, 0, 2, "3 4 ")]
         [TestCase(1, 2, 3, 4, 2, 2, "1 2 ")]
+        [TestCase(1, 2, 3, 4, 1, 2, "1 4 ")]
         public void Remove_N_ElemByIndexTest2(int valueA, int valueB, int valueC, int valueD, 
           int index, int elements, string expected)
         {

@@ -1,6 +1,9 @@
 ﻿using NUnit.Framework;
 using System.Collections;
 
+/// <summary>
+/// Разбор теоретической части с примерами
+/// </summary>
 namespace LinkdList.Test
 {    
     [SetUpFixture] 

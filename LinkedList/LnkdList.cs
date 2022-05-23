@@ -50,13 +50,6 @@ namespace LinkdList
             _head = new Node<T>(value);
             _tail = _head;
         }
-        //public LnkdList(T[] values)
-        //{
-        //    foreach (T value in values)
-        //    {
-        //        Add(value);
-        //    }
-        //}
 
         public LnkdList(T[] values)
         {
@@ -357,7 +350,15 @@ namespace LinkdList
                 throw new IndexOutOfRangeException("Вы вышли за пределы списка");
             }
             Node<T> node = _head;
-            if (index != null && index > 0 && index < Length - 1 && elements <= Length - index)
+            if (index == 0 && elements > 0)
+            {
+                for (int i = 0; i < elements; i++)
+                {
+                    node = node.Next;
+                }
+                _head = node;
+            }
+            else if (index != null && index > 0 && index < Length - 1 && elements <= Length - index)
             {
                 for (int i = 0; i < index - 1; i++)
                 {
@@ -395,9 +396,6 @@ namespace LinkdList
                     counter++;
                 }
                 return counter;
-            }
-            private set
-            {
             }
         }
 
